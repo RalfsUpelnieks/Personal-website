@@ -11,9 +11,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <header id="header" class="alt">
-        <h1>Ralfs Upelnieks</h1>
-        <ul>
+    <header id="header" class="alt menu-mobile">
+        <h1 id="nav-name">Ralfs Upelnieks</h1>
+        <input class="nav-check" type="checkbox" id="nav-check"/>
+        <label for="nav-check" class="nav-label"><span class="nav-icon"></span></label>
+        <ul class="menu">
             <li><a href="#home-section">Home</a></li>
             <li><a href="#about-me-section">About me</a></li>
             <li><a href="#projects-section">Projects</a></li>
@@ -73,7 +75,7 @@
                 <div class = "card" style="background-image: url('assets/images/SteamPriceUpdater.png');">
                     <div class="card-info">
                         <h3 class="card-title" >Steam Item price scraper</h3>
-                        <p class="card-description">Gets steam item prices from steam API and organizes them in Excel</p>
+                        <p class="card-description">Gathers Steam item prices from Steam Web API and organizes them in Excel</p>
                         <a href="https://github.com/RalfsUpelnieks" target="_blank">GITHUB</a>
                     </div>
                 </div>
@@ -161,7 +163,7 @@
             <h2>Contact Me</h2>
             <div id="contact-container">
                 <div id="contact-left">
-                    <p>Message sending is not currently implemented. Please conntact me using email or discord.</p>
+                    <p>Let's Talk! Feel free to drop me a message.</p>
                     <ul>
                         <li>
                             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABIUlEQVRIS92V/RHBQBDFpQMl0AEd0AEl6IAKUAEdoAI6kA7ogBJ0wPuZXXPJJORD/snO7FySe/fe7ru7SdRpOKKG+TvtEhjIrp2SsU7EWrxWMiYsOut9VIc5WHvXcz8t8DQAEwCqBN1fbOF7f8NNdgG+T5Wnkgp0f1R2iwiAWSnxskgsBZoH5J/iszpYaHZjrFeNY+UjR4VqORgTw1CQr821iAm8ZNMhgBwRxMIAgyU9w8w0Yqtb/VUAIsghGBkrnW3tGTuwBUyshPxuc4UFvFpahpDYW7X+jiC2hBaWFoCYLrDMA0I6QjAdlQQg8Zvu5Ok9caHKAhnFZn5qscBNDfeK+vADx/4MwYQ3mZPCrawrEovj4CesXX+0P9mfpGncohezeUAZIJxBRwAAAABJRU5ErkJggg=="/>
@@ -174,7 +176,7 @@
                     </ul>
                 </div>
                 
-                <form method="post" action="#" id="contact-form">
+                <form action="" method="POST" id="contact-form">
                     <div class="fields">
                         <label for="name">Name</label>
                         <input type="text" name="name" placeholder="Name"/>
@@ -185,7 +187,7 @@
                         <label for="message">Message</label>
                         <textarea name="message" placeholder="Message"></textarea>
                     </div>
-                    <a class="Button" href=""><span>Send</span></a>
+                    <button type="submit" class="Button"><span>Send</span></button>
                 </form>
             </div>                
         </section>

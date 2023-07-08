@@ -2,8 +2,8 @@
 
 :root {
   --fs-h1: 8rem;
-  --fs-h2: 3rem;
-  --fs-p: 1.25rem;
+  --fs-h2: 4rem;
+  --fs-p: 1.5rem;
   --fs-input: 1rem;
 }
 
@@ -17,10 +17,9 @@ html {
   scrollbar-width: none;
 }
 
-body {
+body, button {
   background-color: rgb(17, 17, 17);
   font-family: 'Oswald', sans-serif;
-  font-size: var(--fs-400);
 }
 
 body::-webkit-scrollbar {
@@ -28,10 +27,10 @@ body::-webkit-scrollbar {
 }
 
 section {
-  display: grid;
+  display: flex;
   min-height: 100vh;
-  place-items: center;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
@@ -47,17 +46,20 @@ p {
 }
 
 .Button {
-  padding: 10px;
-  padding-top: 10px;
-  padding-right: 28px;
-  padding-bottom: 10px;
-  padding-left: 28px;
+  display: inline-block;
+  padding: 10px 28px 10px 28px;
   border-radius: 3px;
+  background-color: white;
   border: 1px solid rgb(0, 0, 0);
   color: black;
   text-decoration: none;
-
   cursor: pointer;
+}
+
+.Button:hover {
+    background-color: rgb(248, 248, 248);
+    box-shadow: -1px 1px 0 0 #000;
+    transform: translate(1px, -1px);
 }
 
 input {
@@ -68,7 +70,6 @@ input {
   outline: 0;
   margin-top: 5px;
   margin-bottom: 20px;
-  width: 100%;
 
   font-family: 'Oswald', sans-serif;
   font-size: var(--fs-input);
@@ -106,23 +107,14 @@ textarea {
   background-color: rgba(0, 0, 0, .4);
   backdrop-filter: blur(10px); 
   width: 100%;
-  justify-content: space-between;
   z-index: 2;
+  justify-content: end;
 }
-  
-  #header h1 {
-    font-size: 30px;
-    color: white;
-    transition: opacity 1s ease;
-    opacity: 0.80;
-    margin-left: 1%;
-  }
-  
   #header ul {
     list-style-type: none;
     overflow: hidden;
   } 
-    
+
   #header li {
     float: left;
   }
@@ -136,11 +128,7 @@ textarea {
   }
   
   #header li a:hover {
-    background-color: #111;
-  }
-  
-  #header li button:hover {
-    background-color: #111;
+    background-color: #1111119a;
   }
 
 #header.alt {
@@ -148,24 +136,87 @@ textarea {
   backdrop-filter: none; 
   background: none;
 }
-#header.alt h1 {
+#header.alt #nav-name {
   opacity: 0;
+}
+
+#nav-name {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  font-size: 30px;
+  color: white;
+  transition: opacity 0.5s ease;
+  opacity: 0.80;
+  margin-left: 1%;
+}
+
+/* .nav-label {
+    border: 1px solid red;
+    padding: 28px 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.nav-icon {
+    background: #f2f2f2;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-out;
+}
+
+.nav-icon:before,
+.nav-icon:after {
+  background: #f2f2f2;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.nav-icon:before {
+  top: 5px;
+}
+  
+.nav-icon:after {
+  top: -5px;
+}
+
+#header ul {
+    width: 100%;
+    font-size: 2rem;
+} 
+#header li {
+    float: none;
+} 
+
+#header {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+} */
+
+.nav-check {
+    display: none;
 }
 
 /*home section*/
 
 #home-section{
-  display: grid;
-  position: relative;
-  place-items: end;
-  min-height: 100vh;
-  background-color: black;
-  box-shadow: 0 30px 40px rgba(0, 0, 0, 0.87);
+ flex-direction: column;
+ min-height: 100vh;
+ background-color: black;
+ box-shadow: 0 30px 40px rgba(0, 0, 0, 0.87);
 }
 
   #home-section video {
-    background: black;
-    display: block;
     position: absolute;
     left: 0;
     top: 0;
@@ -173,11 +224,23 @@ textarea {
     height: 100%;
     object-fit: cover;
     opacity: 1;
-    transition: opacity 2s ease-in-out;
+    transition: opacity 1s ease-in-out;
     transition-delay: 0.5s;
   }
 
   #home-section h1{
+    transition: opacity 0.8s ease, transform 0.8s ease, filter 0.25s ease;
+    transform: translateX(0);
+    transition-delay: 1.25s;
+    filter: blur(0);
+    opacity: 0.85;
+    color: white;
+    margin-right: 10%;
+    margin-left: auto;
+    user-select: none;
+  }
+
+  #home-section h2 {
     transition: opacity 0.8s ease, transform 0.8s ease, filter 0.25s ease;
     transform: translateX(0);
     transition-delay: 1.5s;
@@ -185,17 +248,7 @@ textarea {
     opacity: 0.85;
     color: white;
     margin-right: 10%;
-    user-select: none;
-  }
-
-  #home-section h2 {
-    transition: opacity 0.8s ease, transform 0.8s ease, filter 0.25s ease;
-    transform: translateX(0);
-    transition-delay: 1.75s;
-    filter: blur(0);
-    opacity: 0.85;
-    color: white;
-    margin-right: 10%;
+    margin-left: auto;
     user-select: none;
   }
 
@@ -218,25 +271,21 @@ textarea {
 /*About me section*/
 
 #about-me-section{
-  max-width: 80%;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 1rem;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 0 20%;
 }
   
   #about-me-section img {
-    width: 60%;
+    width: 40%;
     border-radius: 3px;
     box-shadow: 0 30px 40px rgba(0,0,0,.1);
+    margin-top: 10rem;
+    margin-bottom: 4rem;
   }
   
 #about-me-text {
   color: rgb(194, 194, 194);
-  width: 80%;
-  margin-bottom: auto;
-  margin-top: auto;
-  margin-right: auto;
+  width: 50%;
+  margin-left: 10rem;
 }
   
   #about-me-text h2 {
@@ -246,9 +295,6 @@ textarea {
 /*Project section*/
 
 #projects-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   background-color: rgb(255, 255, 255);
 }
@@ -264,7 +310,7 @@ textarea {
   }
 
 .grid {
-  width: 100%;
+  width: 90%;
   max-width: 1920px;
   display: flex;
   flex-wrap: wrap;
@@ -272,58 +318,57 @@ textarea {
 }
   
 .card {
-  margin: 40px;
+  margin: 30px;
   position: relative;
-  height: 270px;
+  height: 300px;
   width: 480px;
   border-radius: 3px;
   box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
     0px 5px 8px 0px rgba(0, 0, 0, 0.14),
     0px 1px 14px 0px rgba(0, 0, 0, 0.12);
-
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   overflow: hidden;
 }
 
 .card-info {
-  position: relative;
-  width: 100%;
   height: 150px;
   background-color: rgb(255, 255, 255);
   transform: translateY(100%)
-    translateY(76px)
+    translateY(110px)
     translateZ(0);
   transition: transform 0.5s ease-out;
 }
 
+.card:hover .card-info {
+    transform: translateY(175px) translateZ(0);
+}
+
 .card-title {
   margin: 0;
-  padding: 10px;
-  font-size: 25px;
+  padding: 6px 10px;
+  font-size: 1.5rem;
   line-height: 1;
   color: rgba(0, 0, 0, 0.87);
 }
   
 .card-description {
   margin: 0;
-  padding: 10px 24px 24px;
-  font-size: 16px;
+  padding: 0 20px 8px;
+  font-size: 1.10rem;
   line-height: 1.5;
-}
-
-.card:hover .card-info {
-  transform: translateY(120px) translateZ(0);
 }
 
 .card a {
   color: #4e958b;
   text-decoration: none;
-  margin: 14px;
+  margin: 10px;
 }
 
 /* skills section */
 
 #skills-section{
+  flex-direction: column;
   background-color: rgb(255, 255, 255);
 }
 
@@ -332,10 +377,7 @@ textarea {
   max-width: 80%;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 10rem;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 10px;
-
   font-size: 20px;
 }
 
@@ -357,10 +399,14 @@ textarea {
 
   /*Contact section*/
 
-#contact-section{
-  min-height: 60vh;
+#contact-section{ 
+  flex-direction: column;
+  min-height: 50vh;
   background-color: rgb(255, 255, 255);
 }
+  #contact-section input {
+    width: 100%;
+  }
 
   #contact-section ul {
     list-style-type: none;
@@ -376,7 +422,8 @@ textarea {
   } 
 
   #contact-section h2 {
-    margin-bottom: 4%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
 #contact-container {
@@ -416,50 +463,100 @@ footer {
   :root {
     --fs-h1: 6rem;
   }
+
+  #about-me-section{
+    max-width: 80%;
+  }
 }
 
 @media screen and (max-width: 1280px) {
 
   :root {
     --fs-h1: 5rem;
+    --fs-h2: 3rem;
+    --fs-p: 1.25rem;
   }
-
 }
 
 @media screen and (max-width: 980px) {
-
   :root {
     --fs-h1: 5rem;
+    --fs-h2: 2.5rem;
+  }
+
+  #home-section h1 {
+    margin-right: auto;
+  }
+
+  #home-section h2 {
+    margin-right: auto;
+  }
+
+  #about-me-section{
+    flex-direction: column;
+    padding: 0 10%;
+  }
+
+  #about-me-section img {
+    width: 80%;
+  }
+
+  #about-me-text {
+    width: 80%;
+    margin-bottom: 10%;
+    margin-left: 0;
+  }
+
+  #about-me-text h2 {
+    text-align: center;
+  }
+
+  #about-me-section{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  #skills-container {
+    grid-template-columns: 1fr;
+  }
+
+  #contact-container {
+    grid-template-columns: 1fr;
   }
 }
 
-@media screen and (max-width: 736px) {
-
+@media screen and (max-width: 720px) {
   :root {
     --fs-h1: 4rem;
-    --fs-h2: 2.5rem;
-    --fs-p: 1rem;
+    --fs-p: 1.15rem;
+  }
+
+  .card {
+    height: 240px;
+    width: 280px;
+  }
+
+  .card-info {
+    position: absolute;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    transform: none;
+  }
+  
+  .card:hover .card-info {
+      transform: none;
+  }
+
+  .card-description {
+    margin: 0;
+    padding: 0 10px;
+    font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 480px) {
   :root {
     --fs-h1: 3.5rem;
-    --fs-p: 0.70rem;
-  }
-
-  #home-section h1{
-    justify-self: center;
-    margin-right: 0;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  :root {
-    --fs-h1: 3rem;
-  }
-
-  html, body {
-    min-width: 320px;
   }
 }
