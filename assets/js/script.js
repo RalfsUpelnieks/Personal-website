@@ -2,7 +2,7 @@
 
 	var	$window = $(window), 
         $body = $('body'),
-		$header = $('#header'),
+		$navName = $('#nav-name'),
         $homeSection = $("#home-section");
 
 	// Play initial animations on page load.
@@ -12,14 +12,14 @@
         }, 100);
     });
 
-	// Header.
+	// navName.
     $window.on("scroll", function(){
         if(this.scrollY >= $homeSection.height() * 0.9){
-            if($header.hasClass('alt')){
-                $header.removeClass('alt');
+            if($navName.hasClass('alt')){
+                $navName.removeClass('alt');
             }
-        } else if(!$header.hasClass('alt')){
-            $header.addClass('alt');
+        } else if(!$navName.hasClass('alt')){
+            $navName.addClass('alt');
         }
     });
 })(jQuery);
