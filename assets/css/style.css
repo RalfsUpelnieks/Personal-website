@@ -96,10 +96,10 @@ ul {
 #header {
   display: flex;
   position: fixed;
-  /* transition: background-color 0.2s ease-in-out, filter 0.25s ease;; */
   background-color: rgba(0, 0, 0, .4);
   backdrop-filter: blur(10px); 
   width: 100%;
+  min-height: 3.2rem;
   z-index: 2;
   justify-content: space-between;
   align-items: center;
@@ -448,6 +448,20 @@ footer {
 
   #contact-container {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 720px){
+  #menu {
+    display: block;
+  }
+
+  #header li {
+    float: left;
+  }
+
+  .nav-label{
+    display: none;
   }
 }
 
