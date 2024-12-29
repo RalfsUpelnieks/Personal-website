@@ -12,23 +12,12 @@
 
 	// Header.
     $window.on("scroll", function() {
-        if(this.scrollY >= $homeSection.height() * 0.9){
-            if($navName.hasClass('alt')){
-                $navName.removeClass('alt');
-            }
-        } else if(!$navName.hasClass('alt')){
-            $navName.addClass('alt');
-        }
+        const scrollThreshold = $homeSection.height() * 0.9;
+        $header.toggleClass('alt', window.scrollY < scrollThreshold);
     });
 })(jQuery);
 
-window.onbeforeunload = () => {
-    for(const form of document.getElementsByTagName('form')) {
-      form.reset();
-    }
-}
-
-function toggleMenu(menu) {
+function toggleMenu() {
     const links = document.querySelector('#header');
     links.classList.toggle('active');
 }
