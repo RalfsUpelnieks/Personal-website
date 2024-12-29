@@ -11,10 +11,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <header id="header" class="alt menu-mobile">
-        <h1 id="nav-name">Ralfs Upelnieks</h1>
-        <input class="nav-check" type="checkbox" id="nav-check"/>
-        <label for="nav-check" class="nav-label"><span class="nav-icon"></span></label>
+    <header id="header" class="alt">
+        <div id="menu-mobile">
+            <h3 id="nav-name">Ralfs Upelnieks</h3>
+            <div class="nav-label active" onclick="toggleMenu(this)"><span class="nav-icon"></span></div>
+        </div>
         <ul class="menu">
             <li><a href="#home-section">Home</a></li>
             <li><a href="#about-me-section">About me</a></li>
@@ -26,20 +27,18 @@
 
     <main>
         <section id="home-section" class="hidden">
-            <video autoplay muted loop>
-                <source src="assets/videos/video.mp4" type="video/mp4">
-            </video>
-            
-            <h1>Ralfs Upelnieks</h1>
-            <h2>Software developer</h2>
+            <div>
+                <h1>Ralfs Upelnieks</h1>
+                <h2>Software developer</h2>
+            </div>
+            <img id="my-picture" src="assets/images/myPicture.png">
         </section>
 
         <section id="about-me-section">
-            <img src="assets/images/myPicture.JPG">
+            <h2>About me</h2>
             <div id="about-me-text">
-                <h2>About me</h2>
                 <p>Hello, my name is Ralfs Upelnieks.<br><br>
-                    I am a software developer with a passion for game development. Ever since I was a child, I have been captivated by the immersive worlds and interactive experiences that video games offer. As I grew older, my fascination with games turned into a desire to create them myself.
+                    I am a software developer with a passion for computer technologies. Ever since I was a child, I have been fascinated by the endless possibilities technology offers. From tinkering with electronics to building my first simple program, I've always loved creating and problem-solving. Over the years, I've honed my skills in software development, working with various programming languages, frameworks, and tools to bring ideas to life.
                 </p>
             </div>
         </section>
@@ -90,70 +89,48 @@
         </section>
 
         <section id="skills-section">
+            <h2>Skills</h2>
             <div id="skills-container">
-                <div>
-                    <h2>Skills</h2>
+                <div class="skills-column">
+                    <h4>Languages</h4>
+                    <h3>Programming</h3>
                     <ul>
-                        <li>
-                            <p><strong>Programming Languages</strong>
-                            <br>C#
-                            <br>C++
-                            <br>JavaScript
-                            <br>Python
-                            <br>HTML and CSS
-                            <br>SQL Basics</p>
-                        </li>
-                        <li>
-                            <p><strong>Game Development</strong>
-                            <br>Experience with C/C++ programming
-                            <br>Experience with C#
-                            <br>Top-down design
-                            <br>Object-oriented programming
-                            <br>Design patterns
-                            <br>Game design principles.
-                            <br>Level Design
-                            <br>General Game Design
-                            <br>Game Engine Programming</p>
-                        </li>
-                        <li>
-                            <p><strong>Languages</strong>
-                            <br>Fluent in Latvian and English</p>
-                        </li>
+                        <li>C#</li>
+                        <li>C++</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <li>SQL</li>
+                    </ul>
+                    
+                    <h3 class="next-skill">Markup/Styling</h3>
+                    <ul>
+                        <li>HTML and CSS</li>
+                    </ul>
+
+                    <h3 class="next-skill">Communication</h3>
+                    <ul>
+                        <li>Fluent in Latvian and English</li>
                     </ul>
                 </div>
-                <div>
-                    <h2>Software and Tools</h2>
+                <div class="skills-column">
+                    <h3>Technologies</h3>
                     <ul>
-                        <li>
-                            <p><strong>Dev Tools</strong>
-                            <br>Github
-                            <br>Visual Studio Code
-                            <br>Visual Studio 2019
-                            <br>Stack Overflow
-                            <br>LXC
-                            <br>Docker</p>
-                        </li>
-                        <li>
-                            <p><strong>Game Development Engines</strong>
-                            <br>Unity 3D
-                            <br>Unreal Engine 4</p>
-                        </li>
-                        <li>
-                            <p><strong>Communication</strong>
-                            <br>Discord
-                            <br>Microsoft Teams
-                            <br>Zoom
-                            <br>TeamSpeak
-                            <br>Skype</p>
-                        </li>
-                        <li>
-                            <p><strong>Tools</strong>
-                            <br>Microsoft Office
-                            <br>Trello
-                            <br>Notion
-                            <br>Aseprite</p>
-                        </li>
+                        <li>ASP.NET</li>
+                        <li>React</li>
+                        <li>Flask</li>
+                        <li>Tailwind CSS</li>
+                        <li>Git (version control)</li>
+                        <li>Docker</li>
                     </ul>
+                    <h3 class="next-skill">Game Development Engines</h3>
+                    <ul>
+                        <li>Unreal Engine 4</li>
+                        <li>Unity</li>
+                        <li>Godot</li>
+                    </ul>
+
+                    <h4 class="next-skill">Computer hardware/network experience</h4>
                 </div>
             </div>
             <a class="Button" href="assets/files/CV.pdf" target="_blank"><span>Download CV</span></a>
@@ -162,33 +139,14 @@
         <section id="contact-section">
             <h2>Contact Me</h2>
             <div id="contact-container">
-                <div id="contact-left">
-                    <p>Let's Talk! Feel free to drop me a message.</p>
-                    <ul>
-                        <li>
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABIUlEQVRIS92V/RHBQBDFpQMl0AEd0AEl6IAKUAEdoAI6kA7ogBJ0wPuZXXPJJORD/snO7FySe/fe7ru7SdRpOKKG+TvtEhjIrp2SsU7EWrxWMiYsOut9VIc5WHvXcz8t8DQAEwCqBN1fbOF7f8NNdgG+T5Wnkgp0f1R2iwiAWSnxskgsBZoH5J/iszpYaHZjrFeNY+UjR4VqORgTw1CQr821iAm8ZNMhgBwRxMIAgyU9w8w0Yqtb/VUAIsghGBkrnW3tGTuwBUyshPxuc4UFvFpahpDYW7X+jiC2hBaWFoCYLrDMA0I6QjAdlQQg8Zvu5Ok9caHKAhnFZn5qscBNDfeK+vADx/4MwYQ3mZPCrawrEovj4CesXX+0P9mfpGncohezeUAZIJxBRwAAAABJRU5ErkJggg=="/>
-                            <span>ralfs.upelnieks@gmail.com</span>
-                        </li>
-                        <li>
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABbklEQVRIS92V/VECQQzFoQPtACpQKxArQDvACtQK1ArUCoQKlArECsAKvA60BN+P2d3JxCx3czP8Q2Yyt1w+XvKSPYaDPctwz/kHhw9wKgqn0i/pu6Nzot/n0oW0qVEdUXQk5xvppRQAhASrAGCU3mHbSO88UARwK6ennsO/VtzcxnoAqv+W8uwjvwoaS3luxQPc691Dn8wm5tlS5QGoPvPaF4fqj6MOGOpbkJWAGmU1GzQ1nqJouND1krr6MEAkvpCyOSwEsVaIe/QAVE8XVmg1D+xV51kycieu0jlajGK3M4j4L60m+nIBVH6WAEZ6EmulzMEC/BgKsjOJaJUb62lgWz6lXMqJAyjstAEEcZ1edepg1/Z4OvyWhQB+i5pED8F88OAaJRjFvkxPNgkbgg1aofDfTSYZzrPkTBKGmTfJVs4Z/7VJvtKZDx6z20rtD4dq2BgAWLldgt+JlG5K4jaAlpzdzYf/l9mdi4rnHw/2SBltNCAAAAAAAElFTkSuQmCC"/>
-                            <span>ralfovichs#3570</span>
-                        </li>
-                    </ul>
+                <div class="contact">
+                    <span>Email</span>
+                    <a href="mailto:ralfs.upelnieks@gmail.com" title="mailto:ralfs.upelnieks@gmail.com">ralfs.upelnieks@gmail.com</a>
                 </div>
-                
-                <form action="" method="POST" id="contact-form">
-                    <div class="fields">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" placeholder="Name"/>
-
-                        <label for="email">Email</label>
-                        <input type="email" name="email" placeholder="Email"/>
-
-                        <label for="message">Message</label>
-                        <textarea name="message" placeholder="Message"></textarea>
-                    </div>
-                    <button type="submit" class="Button"><span>Send</span></button>
-                </form>
+                <div class="contact">
+                    <span>LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/ralfs-upelnieks/" title="LinkedIn">ralfs-upelnieks</a>
+                </div>
             </div>                
         </section>
     </main>

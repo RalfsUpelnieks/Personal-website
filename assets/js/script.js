@@ -1,9 +1,7 @@
 (function($) {
-
-	var	$window = $(window), 
-        $body = $('body'),
-		$header = $('#header'),
-        $homeSection = $("#home-section");
+	const $window = $(window);
+    const $header = $('#header');
+    const $homeSection = $('#home-section');
 
 	// Play initial animations on page load.
     $window.on('load', function() {
@@ -13,7 +11,7 @@
     });
 
 	// Header.
-    $window.on("scroll", function(){
+    $window.on("scroll", function() {
         if(this.scrollY >= $homeSection.height() * 0.9){
             if($header.hasClass('alt')){
                 $header.removeClass('alt');
@@ -28,4 +26,9 @@ window.onbeforeunload = () => {
     for(const form of document.getElementsByTagName('form')) {
       form.reset();
     }
+}
+
+function toggleMenu(menu) {
+    const links = document.querySelector('#header');
+    links.classList.toggle('active');
 }
