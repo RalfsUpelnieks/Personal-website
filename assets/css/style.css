@@ -85,12 +85,14 @@ ul {
 }
 
 .Button {
-  padding: 10px 28px 10px 28px;
+  display: flex;
+  padding: 0.625rem 1.5rem;
   border-radius: var(--border-radius-small);
   border: 1px solid var(--color-secondary);
   background-color: white;
   margin-top: 2rem;
   cursor: pointer;
+  align-items: center;
 }
 
 .Button:hover {
@@ -327,7 +329,7 @@ ul {
 .project-image {
   position: absolute;
   margin-left: 0;
-  transition: margin 1s;
+  transition: margin 0.6s;
 }
 
 .project-image.left  {
@@ -344,10 +346,14 @@ ul {
   margin-bottom: 0.5rem;
 }
 
-.project-text a {
+#project-code {
   align-self: center;
   font-size: 1.2rem;
   color: rgb(78, 149, 139);
+}
+
+#project-description {
+  width: 29rem
 }
 
 #project-image-border {
@@ -369,8 +375,6 @@ ul {
 
   #project-image-inner-border img {
     width: 100%;
-    min-height: 200px;
-    height: auto;
   }
 
 .project-buttons {
@@ -398,17 +402,24 @@ ul {
 #skills-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 6rem;
+  column-gap: 2rem;
 }
 
 .skills-column {
   background-color: white;
   padding: 1rem 1.7rem;
+  margin: 1rem 0;
   border-radius: var(--border-radius);
 }
 
 .next-skill {
   margin-top: 1rem;
+}
+
+@media screen and (max-width: 980px) {
+  #skills-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 /*Contact section*/
@@ -464,10 +475,6 @@ footer {
 @media screen and (max-width: 980px) {
   :root {
     font-size: 10px;
-  }
-
-  #skills-container {
-    grid-template-columns: 1fr;
   }
 
   #contact-container {

@@ -87,7 +87,7 @@ function NextProject() {
 
     setTimeout(() => {
         isAnimating = false;
-    }, 1000);
+    }, 400);
 }
 
 function PreviousProject() {
@@ -109,7 +109,7 @@ function PreviousProject() {
 
     setTimeout(() => {
         isAnimating = false;
-    }, 1000);
+    }, 400);
 }
 
 function toggleMenu() {
