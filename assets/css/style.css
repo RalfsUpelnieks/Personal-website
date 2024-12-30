@@ -295,12 +295,12 @@ ul {
     filter: blur(2px);
   }
 
-  @media screen and (max-width: 720px) {
-    #home-section{
-      flex-direction: column-reverse;
-      text-align: center;
-    }
+@media screen and (max-width: 720px) {
+  #home-section{
+    flex-direction: column-reverse;
+    text-align: center;
   }
+}
 
 /*About me section*/
 
@@ -353,7 +353,7 @@ ul {
 }
 
 #project-description {
-  width: 29rem
+  width: 40rem
 }
 
 #project-image-border {
@@ -392,6 +392,12 @@ ul {
   margin: 0 1rem;
 }
 
+@media screen and (max-width: 560px) {
+  #project-description {
+    width: 24rem
+  }
+}
+
 /* skills section */
 
 #skills-section {
@@ -414,12 +420,6 @@ ul {
 
 .next-skill {
   margin-top: 1rem;
-}
-
-@media screen and (max-width: 980px) {
-  #skills-container {
-    grid-template-columns: 1fr;
-  }
 }
 
 /*Contact section*/
