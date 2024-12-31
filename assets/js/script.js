@@ -10,29 +10,37 @@ const projectCount = document.getElementById("project-count");
 
 const projects = [
     {
-        id: "project-image-1",
-        name: "To the moon",
-        description: "Trading simulator developed using C++ and SFML",
-        image: "assets/images/ToTheMoon.png",
-        code: "https://github.com/RalfsUpelnieks/To-the-moon"
+        name: "NoteApp",
+        description: "Note-taking web application developed with C#, TypesSript, SQL, ASP.NET api, React and Tailwind CSS",
+        image: "assets/images/NoteApp.png",
+        linkText: "View source code",
+        link: "https://github.com/RalfsUpelnieks/Note-app"
     },
     {
-        id: "project-image-2",
         name: "CityLife",
         description: "Life simulator developed using C# and Unity",
         image: "assets/images/CityLife.png",
     },
     {
-        id: "project-image-3",
-        name: "NoteApp",
-        description: "Note-taking web application developed with C#, TypesSript, SQL, ASP.NET api, React and Tailwind CSS",
-        image: "assets/images/NoteApp.png",
-        code: "https://github.com/RalfsUpelnieks/Note-app"
+        name: "Personal website",
+        description: "Developed using pure HTML, CSS and JavaScript. *Insert recursion joke",
+        image: "assets/images/PersonalWebsite.png",
+        linkText: "View source code",
+        link: "https://github.com/RalfsUpelnieks/Personal-website"
     },
+    {
+        name: "To the moon",
+        description: "Trading simulator developed using C++ and SFML",
+        image: "assets/images/ToTheMoon.png",
+        linkText: "View source code",
+        link: "https://github.com/RalfsUpelnieks/To-the-moon"
+    }
 ];
 
 var selectedProject = 0;
 var isAnimating = false;
+
+const idName = "project-image-"
 
 updateProjectElements();
 
@@ -44,7 +52,7 @@ projects.forEach((project, index) => {
         img.classList.add('right');
     }
     
-    img.id = project.id;
+    img.id = idName + index;
     img.src = project.image;
     img.alt = project.name;
 
@@ -57,8 +65,9 @@ function updateProjectElements() {
     projectName.textContent = projects[selectedProject].name;
     projectDescription.textContent = projects[selectedProject].description;
 
-    if(projects[selectedProject].code) {
-        projectCode.href = projects[selectedProject].code;
+    if(projects[selectedProject].linkText && projects[selectedProject].link) {
+        projectCode.textContent = projects[selectedProject].linkText;
+        projectCode.href = projects[selectedProject].link;
         projectCode.classList.remove('display-none')
     } else {
         projectCode.classList.add('display-none');
@@ -74,11 +83,11 @@ function NextProject() {
     }
 
     isAnimating = true;
-    const oldProjcect = document.getElementById(projects[selectedProject].id);
+    const oldProjcect = document.getElementById(idName + selectedProject);
 
     selectedProject += 1;
 
-    const newProjcect = document.getElementById(projects[selectedProject].id);
+    const newProjcect = document.getElementById(idName + selectedProject);
 
     oldProjcect.classList.add('left');
     newProjcect.classList.remove('right');
@@ -96,11 +105,11 @@ function PreviousProject() {
     }
 
     isAnimating = true;
-    const oldProjcect = document.getElementById(projects[selectedProject].id);
+    const oldProjcect = document.getElementById(idName + selectedProject);
 
     selectedProject -= 1;
 
-    const newProjcect = document.getElementById(projects[selectedProject].id);
+    const newProjcect = document.getElementById(idName + selectedProject);
 
     oldProjcect.classList.add('right');
     newProjcect.classList.remove('left');
