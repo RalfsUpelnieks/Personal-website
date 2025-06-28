@@ -10,11 +10,18 @@ const projectCount = document.getElementById("project-count");
 
 const projects = [
     {
-        name: "NoteApp",
-        description: "Note-taking web application developed with C#, TypesSript, SQL, ASP.NET api, React and Tailwind CSS",
+        name: "Note App",
+        description: "Note-taking web application developed with C#, TypesSript, SQL, ASP.NET API, React, and Tailwind CSS",
         image: "assets/images/NoteApp.png",
         linkText: "View source code",
         link: "https://github.com/RalfsUpelnieks/Note-app"
+    },
+    {
+        name: "Home Management App",
+        description: "Residential property management web application developed with C#, TypesSript, SQL, ASP.NET API, Angular, and Bootstrap 5",
+        image: "assets/images/HouseManagmentApp.png",
+        linkText: "View source code",
+        link: "https://github.com/RalfsUpelnieks/House-managment-app"
     },
     {
         name: "CityLife",
@@ -23,7 +30,7 @@ const projects = [
     },
     {
         name: "Personal website",
-        description: "Developed using pure HTML, CSS and JavaScript. *Insert recursion joke",
+        description: "Developed using pure HTML, CSS, and JavaScript. *Insert recursion joke",
         image: "assets/images/PersonalWebsite.png",
         linkText: "View source code",
         link: "https://github.com/RalfsUpelnieks/Personal-website"
